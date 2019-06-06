@@ -19,7 +19,7 @@ void MK_init()
 	// Keyboard scan timer. Current timer compare value found by trial and error
 	OCRnA = 64000;
 	OCRnB = 32000; // 51200 25600 12800 6400 3200
-	TCCRnB |= (1<<CSn1) | (1<<CSn0) | (1<<WGMn2);
+	TCCRnB |= (1<<CSn1) | (1<<CSn0) | (1<<WGMn2); // /64 prescaler see table 17-6
 	// Enable interrupt for output compare OCRnA & OCRnB
 	TIMSKn |= (1<<OCIEnA) | (1<<OCIEnB);
 	

@@ -25,6 +25,8 @@ The reason for using main() for the wateringsystem, is due to the software delay
 
 By using main(), we make sure a timer is not halted, while the wateringsystem is running.
 
+The second timer reads the columns and rows of the keypad.
+
 ## SunDetect
 Photocell and LED control
 ***

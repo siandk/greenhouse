@@ -21,6 +21,11 @@ int readADC(int MUX)
 	// Return ADC value
 	if (VREF == 3.3)
 	{
+		// All sensor reading formulas are set up using a 5v reference.
+		// I did not have time to change the formulas so this will have to do
+		// 5V   / 1024 = 4.88mV
+		// 3.3V / 1024 = 3.22mV
+		// 4.88 / 3.22 = 1.515
 		return ADC * 1.515;
 	}
 	return ADC;
