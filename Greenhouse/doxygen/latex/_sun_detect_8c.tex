@@ -1,0 +1,73 @@
+\hypertarget{_sun_detect_8c}{}\section{Sun\+Detect.\+c File Reference}
+\label{_sun_detect_8c}\index{SunDetect.c@{SunDetect.c}}
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Sun\+Detect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Read\+A\+D\+C.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_sun_detect_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~16000000\+UL
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_sun_detect_8c_a0cfa8bf08501f1c19d2357856d4236ae}{S\+D\+\_\+init}} (void)
+\item 
+int \mbox{\hyperlink{_sun_detect_8c_af1d63455e5a91999225f25fd0cebc18e}{read\+Light}} ()
+\item 
+void \mbox{\hyperlink{_sun_detect_8c_a99b1dcceaaa6f6d5ccfa1d694190ebcb}{light\+Toggle}} (int light\+Value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_sun_detect_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{_sun_detect_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{SunDetect.c@{SunDetect.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!SunDetect.c@{SunDetect.c}}
+\subsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~16000000\+UL}
+
+
+
+Definition at line 8 of file Sun\+Detect.\+c.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_sun_detect_8c_a99b1dcceaaa6f6d5ccfa1d694190ebcb}\label{_sun_detect_8c_a99b1dcceaaa6f6d5ccfa1d694190ebcb}} 
+\index{SunDetect.c@{SunDetect.c}!lightToggle@{lightToggle}}
+\index{lightToggle@{lightToggle}!SunDetect.c@{SunDetect.c}}
+\subsubsection{\texorpdfstring{lightToggle()}{lightToggle()}}
+{\footnotesize\ttfamily void light\+Toggle (\begin{DoxyParamCaption}\item[{int}]{light\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file Sun\+Detect.\+c.
+
+\mbox{\Hypertarget{_sun_detect_8c_af1d63455e5a91999225f25fd0cebc18e}\label{_sun_detect_8c_af1d63455e5a91999225f25fd0cebc18e}} 
+\index{SunDetect.c@{SunDetect.c}!readLight@{readLight}}
+\index{readLight@{readLight}!SunDetect.c@{SunDetect.c}}
+\subsubsection{\texorpdfstring{readLight()}{readLight()}}
+{\footnotesize\ttfamily int read\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Sun\+Detect.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{_sun_detect_8c_af1d63455e5a91999225f25fd0cebc18e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_sun_detect_8c_a0cfa8bf08501f1c19d2357856d4236ae}\label{_sun_detect_8c_a0cfa8bf08501f1c19d2357856d4236ae}} 
+\index{SunDetect.c@{SunDetect.c}!SD\_init@{SD\_init}}
+\index{SD\_init@{SD\_init}!SunDetect.c@{SunDetect.c}}
+\subsubsection{\texorpdfstring{SD\_init()}{SD\_init()}}
+{\footnotesize\ttfamily void S\+D\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file Sun\+Detect.\+c.
+

@@ -1,0 +1,7 @@
+<map id="readTempKelvin" name="readTempKelvin">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,119,57"/>
+<area shape="rect" id="node2" href="$_temp_detect_8c.html#adcb1f451e49c065311acc9b8ae095237" title=" " alt="" coords="167,31,245,57"/>
+<area shape="rect" id="node3" href="$_temp_detect_8c.html#ae9f1c2a8a3700dbd4dc56ab5a1a4ee20" title=" " alt="" coords="293,5,384,32"/>
+<area shape="rect" id="node4" href="$_read_a_d_c_8c.html#a53ba37a708e9bd9740172b8a441f1541" title=" " alt="" coords="301,56,376,83"/>
+<area shape="rect" id="node5" href="$_read_a_d_c_8c.html#a3e26b65aa4de25792e3226c002b20dad" title=" " alt="" coords="432,56,499,83"/>
+</map>

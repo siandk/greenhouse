@@ -1,0 +1,133 @@
+\hypertarget{_temp_detect_8c}{}\section{Temp\+Detect.\+c File Reference}
+\label{_temp_detect_8c}\index{TempDetect.c@{TempDetect.c}}
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Temp\+Detect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Read\+A\+D\+C.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_temp_detect_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~16000000\+UL
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_temp_detect_8c_a4f19721d6d752ceb26a2c1d130555d71}{T\+D\+\_\+init}} ()
+\item 
+float \mbox{\hyperlink{_temp_detect_8c_adcb1f451e49c065311acc9b8ae095237}{read\+Temp}} ()
+\item 
+float \mbox{\hyperlink{_temp_detect_8c_ae19886b8a40bfed9e311a9d1ee89a390}{read\+Temp\+Celsius}} ()
+\item 
+float \mbox{\hyperlink{_temp_detect_8c_ad9660ec6908ce34f81953ad9ebe901dc}{read\+Temp\+Kelvin}} ()
+\item 
+float \mbox{\hyperlink{_temp_detect_8c_a05d30e383be09ae564bc5490b936f607}{read\+Temp\+Fahrenheit}} ()
+\item 
+float \mbox{\hyperlink{_temp_detect_8c_ae9f1c2a8a3700dbd4dc56ab5a1a4ee20}{convert\+A\+DC}} (int A\+D\+C\+\_\+data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_temp_detect_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{_temp_detect_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{TempDetect.c@{TempDetect.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!TempDetect.c@{TempDetect.c}}
+\subsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~16000000\+UL}
+
+
+
+Definition at line 8 of file Temp\+Detect.\+c.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_temp_detect_8c_ae9f1c2a8a3700dbd4dc56ab5a1a4ee20}\label{_temp_detect_8c_ae9f1c2a8a3700dbd4dc56ab5a1a4ee20}} 
+\index{TempDetect.c@{TempDetect.c}!convertADC@{convertADC}}
+\index{convertADC@{convertADC}!TempDetect.c@{TempDetect.c}}
+\subsubsection{\texorpdfstring{convertADC()}{convertADC()}}
+{\footnotesize\ttfamily float convert\+A\+DC (\begin{DoxyParamCaption}\item[{int}]{A\+D\+C\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 38 of file Temp\+Detect.\+c.
+
+\mbox{\Hypertarget{_temp_detect_8c_adcb1f451e49c065311acc9b8ae095237}\label{_temp_detect_8c_adcb1f451e49c065311acc9b8ae095237}} 
+\index{TempDetect.c@{TempDetect.c}!readTemp@{readTemp}}
+\index{readTemp@{readTemp}!TempDetect.c@{TempDetect.c}}
+\subsubsection{\texorpdfstring{readTemp()}{readTemp()}}
+{\footnotesize\ttfamily float read\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file Temp\+Detect.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{_temp_detect_8c_adcb1f451e49c065311acc9b8ae095237_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_temp_detect_8c_ae19886b8a40bfed9e311a9d1ee89a390}\label{_temp_detect_8c_ae19886b8a40bfed9e311a9d1ee89a390}} 
+\index{TempDetect.c@{TempDetect.c}!readTempCelsius@{readTempCelsius}}
+\index{readTempCelsius@{readTempCelsius}!TempDetect.c@{TempDetect.c}}
+\subsubsection{\texorpdfstring{readTempCelsius()}{readTempCelsius()}}
+{\footnotesize\ttfamily float read\+Temp\+Celsius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Temp\+Detect.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_temp_detect_8c_ae19886b8a40bfed9e311a9d1ee89a390_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_temp_detect_8c_a05d30e383be09ae564bc5490b936f607}\label{_temp_detect_8c_a05d30e383be09ae564bc5490b936f607}} 
+\index{TempDetect.c@{TempDetect.c}!readTempFahrenheit@{readTempFahrenheit}}
+\index{readTempFahrenheit@{readTempFahrenheit}!TempDetect.c@{TempDetect.c}}
+\subsubsection{\texorpdfstring{readTempFahrenheit()}{readTempFahrenheit()}}
+{\footnotesize\ttfamily float read\+Temp\+Fahrenheit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file Temp\+Detect.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_temp_detect_8c_a05d30e383be09ae564bc5490b936f607_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_temp_detect_8c_ad9660ec6908ce34f81953ad9ebe901dc}\label{_temp_detect_8c_ad9660ec6908ce34f81953ad9ebe901dc}} 
+\index{TempDetect.c@{TempDetect.c}!readTempKelvin@{readTempKelvin}}
+\index{readTempKelvin@{readTempKelvin}!TempDetect.c@{TempDetect.c}}
+\subsubsection{\texorpdfstring{readTempKelvin()}{readTempKelvin()}}
+{\footnotesize\ttfamily float read\+Temp\+Kelvin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Temp\+Detect.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_temp_detect_8c_ad9660ec6908ce34f81953ad9ebe901dc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_temp_detect_8c_a4f19721d6d752ceb26a2c1d130555d71}\label{_temp_detect_8c_a4f19721d6d752ceb26a2c1d130555d71}} 
+\index{TempDetect.c@{TempDetect.c}!TD\_init@{TD\_init}}
+\index{TD\_init@{TD\_init}!TempDetect.c@{TempDetect.c}}
+\subsubsection{\texorpdfstring{TD\_init()}{TD\_init()}}
+{\footnotesize\ttfamily void T\+D\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file Temp\+Detect.\+c.
+
