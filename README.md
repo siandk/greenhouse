@@ -10,6 +10,21 @@ The documentation below shows the components configured with their default setti
 ## Greenhouse
 This is the main program. Consisting of a main(), and 2 timers.
 
+The first timer (Timer 1) controls the automatic controls, and the LCD display output
+
+The timer is set up with a 2 second delay, and includes the watchdog timer reset (The watchdog timer has a 4 second timeout)
+
+Delay:
+
+- T=1f=116M=62.5ns
+- (Tdelay / (Tcpu * Prescaler)) - 1 = (2s / (62,5nSek * 1024)) - 1 = 31249
+
+The main() functions sole purpose is to start the watering system, if the global WS_flag has been set to 1.
+
+The reason for using main() for the wateringsystem, is due to the software delay, between the steps in the stepmotor pattern.
+
+By using main(), we make sure a timer is not halted, while the wateringsystem is running.
+
 ## SunDetect
 Photocell and LED control
 ***
@@ -137,6 +152,7 @@ It takes 4096 steps for a full revolution of the stepmotor. This means that for 
 - 4096 / 8 = 512
 
 ***Stepmotor pattern:***
+
 |PB0 |PB1 |PB2 |PB3 |   |
 |----|----|----|----|---|
 |1   |0   |0   |0   |   |
