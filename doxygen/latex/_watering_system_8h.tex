@@ -1,0 +1,343 @@
+\hypertarget{_watering_system_8h}{}\section{Watering\+System/\+Watering\+System.h File Reference}
+\label{_watering_system_8h}\index{WateringSystem/WateringSystem.h@{WateringSystem/WateringSystem.h}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a33a42d6bfefe54ae2384f5c28dd87340}{R\+EV}}~512
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a299eb815d3c2c3b15695efc093406756}{R\+E\+V\+D\+I\+S\+T\+A\+N\+CE}}~5
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_aeb79f391c39beaad6a4418f802fe7543}{W\+S\+\_\+\+P\+O\+R\+Tx}}~P\+O\+R\+TB
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a8c4d72b4da195b72d8cc7e03505c6dd1}{W\+S\+\_\+\+D\+D\+Rx1}}~D\+D\+RB
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a74befc746546cac278e84c546a787ea1}{W\+S\+\_\+\+Px0}}~P\+B0
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a65bfe6d0c328cbf442597f7b27afd915}{W\+S\+\_\+\+Px1}}~P\+B1
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_ae6631581a28c815873e5c7e7b602bd74}{W\+S\+\_\+\+Px2}}~P\+B2
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a121b90538fc05d4d97dc12f62178e124}{W\+S\+\_\+\+Px3}}~P\+B3
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a52ed638de047bd6e035c1f8520140fcb}{M\+O\+V\+E\+D\+E\+L\+AY}}~1
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_ab6104064268f4eb520a20bfbad8abd9a}{W\+S\+\_\+\+T\+C\+C\+RnA}}~T\+C\+C\+R3A
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_aaab783384ecdfbd4f46de4b49a923622}{W\+S\+\_\+\+T\+C\+C\+RnB}}~T\+C\+C\+R3B
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a35a04e2f86827266424c4d2411d6eefc}{W\+S\+\_\+\+I\+C\+Rn}}~I\+C\+R3
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_acd89aced08a29efb9a01aab1bcd744ba}{W\+S\+\_\+\+D\+D\+Rx2}}~D\+D\+RE
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a3b3937784cab1b0b97b588e44771f6fd}{W\+S\+\_\+\+Pxn}}~P\+E5
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a5fc05b1c2eaefdae9417cb17093d4411}{W\+S\+\_\+\+O\+C\+Rnx}}~O\+C\+R3C
+\item 
+\#define \mbox{\hyperlink{_watering_system_8h_a7a86dd1f5b0b0702d81f5870bce0e7a4}{W\+S\+\_\+\+C\+O\+Mnx1}}~C\+O\+M3\+C1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_watering_system_8h_a8279f24cca44161d4c8044c6aee9510c}{W\+S\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{_watering_system_8h_a4185c2455a5b33b107734dc1638ca9d1}{open\+Water}} ()
+\item 
+void \mbox{\hyperlink{_watering_system_8h_a2776ebdba0ecddab0b048239acc0af83}{close\+Water}} ()
+\item 
+void \mbox{\hyperlink{_watering_system_8h_a37e70a8280b8286b3dbc0eee7ed36f1f}{water\+Toggle}} ()
+\item 
+void \mbox{\hyperlink{_watering_system_8h_a60de64d75454385b23995437f1d72669}{start}} ()
+\item 
+void \mbox{\hyperlink{_watering_system_8h_a618d986e214be5b102686274ac420be0}{move\+Forward}} ()
+\item 
+void \mbox{\hyperlink{_watering_system_8h_a43566d01b2cb0d475a4bac2de74662ac}{rotate\+Clockwise}} ()
+\item 
+void \mbox{\hyperlink{_watering_system_8h_a39321c04c34c4c2e46ed14803bdddd39}{move\+Backward}} ()
+\item 
+void \mbox{\hyperlink{_watering_system_8h_a37486357c78d2fad1e83bd8801d72713}{rotate\+Counter\+Clockwise}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_watering_system_8h_a52ed638de047bd6e035c1f8520140fcb}\label{_watering_system_8h_a52ed638de047bd6e035c1f8520140fcb}} 
+\index{WateringSystem.h@{WateringSystem.h}!MOVEDELAY@{MOVEDELAY}}
+\index{MOVEDELAY@{MOVEDELAY}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{MOVEDELAY}{MOVEDELAY}}
+{\footnotesize\ttfamily \#define M\+O\+V\+E\+D\+E\+L\+AY~1}
+
+
+
+Definition at line 26 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_a33a42d6bfefe54ae2384f5c28dd87340}\label{_watering_system_8h_a33a42d6bfefe54ae2384f5c28dd87340}} 
+\index{WateringSystem.h@{WateringSystem.h}!REV@{REV}}
+\index{REV@{REV}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{REV}{REV}}
+{\footnotesize\ttfamily \#define R\+EV~512}
+
+
+
+Definition at line 17 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_a299eb815d3c2c3b15695efc093406756}\label{_watering_system_8h_a299eb815d3c2c3b15695efc093406756}} 
+\index{WateringSystem.h@{WateringSystem.h}!REVDISTANCE@{REVDISTANCE}}
+\index{REVDISTANCE@{REVDISTANCE}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{REVDISTANCE}{REVDISTANCE}}
+{\footnotesize\ttfamily \#define R\+E\+V\+D\+I\+S\+T\+A\+N\+CE~5}
+
+
+
+Definition at line 18 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_a7a86dd1f5b0b0702d81f5870bce0e7a4}\label{_watering_system_8h_a7a86dd1f5b0b0702d81f5870bce0e7a4}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_COMnx1@{WS\_COMnx1}}
+\index{WS\_COMnx1@{WS\_COMnx1}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_COMnx1}{WS\_COMnx1}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+C\+O\+Mnx1~C\+O\+M3\+C1}
+
+
+
+Definition at line 36 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_a8c4d72b4da195b72d8cc7e03505c6dd1}\label{_watering_system_8h_a8c4d72b4da195b72d8cc7e03505c6dd1}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_DDRx1@{WS\_DDRx1}}
+\index{WS\_DDRx1@{WS\_DDRx1}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_DDRx1}{WS\_DDRx1}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+D\+D\+Rx1~D\+D\+RB}
+
+
+
+Definition at line 21 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_acd89aced08a29efb9a01aab1bcd744ba}\label{_watering_system_8h_acd89aced08a29efb9a01aab1bcd744ba}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_DDRx2@{WS\_DDRx2}}
+\index{WS\_DDRx2@{WS\_DDRx2}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_DDRx2}{WS\_DDRx2}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+D\+D\+Rx2~D\+D\+RE}
+
+
+
+Definition at line 33 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_a35a04e2f86827266424c4d2411d6eefc}\label{_watering_system_8h_a35a04e2f86827266424c4d2411d6eefc}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_ICRn@{WS\_ICRn}}
+\index{WS\_ICRn@{WS\_ICRn}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_ICRn}{WS\_ICRn}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+I\+C\+Rn~I\+C\+R3}
+
+
+
+Definition at line 32 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_a5fc05b1c2eaefdae9417cb17093d4411}\label{_watering_system_8h_a5fc05b1c2eaefdae9417cb17093d4411}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_OCRnx@{WS\_OCRnx}}
+\index{WS\_OCRnx@{WS\_OCRnx}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_OCRnx}{WS\_OCRnx}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+O\+C\+Rnx~O\+C\+R3C}
+
+
+
+Definition at line 35 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_aeb79f391c39beaad6a4418f802fe7543}\label{_watering_system_8h_aeb79f391c39beaad6a4418f802fe7543}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_PORTx@{WS\_PORTx}}
+\index{WS\_PORTx@{WS\_PORTx}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_PORTx}{WS\_PORTx}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+P\+O\+R\+Tx~P\+O\+R\+TB}
+
+
+
+Definition at line 20 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_a74befc746546cac278e84c546a787ea1}\label{_watering_system_8h_a74befc746546cac278e84c546a787ea1}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_Px0@{WS\_Px0}}
+\index{WS\_Px0@{WS\_Px0}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_Px0}{WS\_Px0}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+Px0~P\+B0}
+
+
+
+Definition at line 22 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_a65bfe6d0c328cbf442597f7b27afd915}\label{_watering_system_8h_a65bfe6d0c328cbf442597f7b27afd915}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_Px1@{WS\_Px1}}
+\index{WS\_Px1@{WS\_Px1}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_Px1}{WS\_Px1}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+Px1~P\+B1}
+
+
+
+Definition at line 23 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_ae6631581a28c815873e5c7e7b602bd74}\label{_watering_system_8h_ae6631581a28c815873e5c7e7b602bd74}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_Px2@{WS\_Px2}}
+\index{WS\_Px2@{WS\_Px2}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_Px2}{WS\_Px2}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+Px2~P\+B2}
+
+
+
+Definition at line 24 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_a121b90538fc05d4d97dc12f62178e124}\label{_watering_system_8h_a121b90538fc05d4d97dc12f62178e124}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_Px3@{WS\_Px3}}
+\index{WS\_Px3@{WS\_Px3}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_Px3}{WS\_Px3}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+Px3~P\+B3}
+
+
+
+Definition at line 25 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_a3b3937784cab1b0b97b588e44771f6fd}\label{_watering_system_8h_a3b3937784cab1b0b97b588e44771f6fd}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_Pxn@{WS\_Pxn}}
+\index{WS\_Pxn@{WS\_Pxn}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_Pxn}{WS\_Pxn}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+Pxn~P\+E5}
+
+
+
+Definition at line 34 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_ab6104064268f4eb520a20bfbad8abd9a}\label{_watering_system_8h_ab6104064268f4eb520a20bfbad8abd9a}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_TCCRnA@{WS\_TCCRnA}}
+\index{WS\_TCCRnA@{WS\_TCCRnA}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_TCCRnA}{WS\_TCCRnA}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+T\+C\+C\+RnA~T\+C\+C\+R3A}
+
+
+
+Definition at line 30 of file Watering\+System.\+h.
+
+\mbox{\Hypertarget{_watering_system_8h_aaab783384ecdfbd4f46de4b49a923622}\label{_watering_system_8h_aaab783384ecdfbd4f46de4b49a923622}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_TCCRnB@{WS\_TCCRnB}}
+\index{WS\_TCCRnB@{WS\_TCCRnB}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_TCCRnB}{WS\_TCCRnB}}
+{\footnotesize\ttfamily \#define W\+S\+\_\+\+T\+C\+C\+RnB~T\+C\+C\+R3B}
+
+
+
+Definition at line 31 of file Watering\+System.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_watering_system_8h_a2776ebdba0ecddab0b048239acc0af83}\label{_watering_system_8h_a2776ebdba0ecddab0b048239acc0af83}} 
+\index{WateringSystem.h@{WateringSystem.h}!closeWater@{closeWater}}
+\index{closeWater@{closeWater}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{closeWater()}{closeWater()}}
+{\footnotesize\ttfamily void close\+Water (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file Watering\+System.\+c.
+
+\mbox{\Hypertarget{_watering_system_8h_a39321c04c34c4c2e46ed14803bdddd39}\label{_watering_system_8h_a39321c04c34c4c2e46ed14803bdddd39}} 
+\index{WateringSystem.h@{WateringSystem.h}!moveBackward@{moveBackward}}
+\index{moveBackward@{moveBackward}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{moveBackward()}{moveBackward()}}
+{\footnotesize\ttfamily void move\+Backward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 78 of file Watering\+System.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{_watering_system_8h_a39321c04c34c4c2e46ed14803bdddd39_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_watering_system_8h_a618d986e214be5b102686274ac420be0}\label{_watering_system_8h_a618d986e214be5b102686274ac420be0}} 
+\index{WateringSystem.h@{WateringSystem.h}!moveForward@{moveForward}}
+\index{moveForward@{moveForward}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{moveForward()}{moveForward()}}
+{\footnotesize\ttfamily void move\+Forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file Watering\+System.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{_watering_system_8h_a618d986e214be5b102686274ac420be0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_watering_system_8h_a4185c2455a5b33b107734dc1638ca9d1}\label{_watering_system_8h_a4185c2455a5b33b107734dc1638ca9d1}} 
+\index{WateringSystem.h@{WateringSystem.h}!openWater@{openWater}}
+\index{openWater@{openWater}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{openWater()}{openWater()}}
+{\footnotesize\ttfamily void open\+Water (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file Watering\+System.\+c.
+
+\mbox{\Hypertarget{_watering_system_8h_a43566d01b2cb0d475a4bac2de74662ac}\label{_watering_system_8h_a43566d01b2cb0d475a4bac2de74662ac}} 
+\index{WateringSystem.h@{WateringSystem.h}!rotateClockwise@{rotateClockwise}}
+\index{rotateClockwise@{rotateClockwise}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{rotateClockwise()}{rotateClockwise()}}
+{\footnotesize\ttfamily void rotate\+Clockwise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file Watering\+System.\+c.
+
+\mbox{\Hypertarget{_watering_system_8h_a37486357c78d2fad1e83bd8801d72713}\label{_watering_system_8h_a37486357c78d2fad1e83bd8801d72713}} 
+\index{WateringSystem.h@{WateringSystem.h}!rotateCounterClockwise@{rotateCounterClockwise}}
+\index{rotateCounterClockwise@{rotateCounterClockwise}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{rotateCounterClockwise()}{rotateCounterClockwise()}}
+{\footnotesize\ttfamily void rotate\+Counter\+Clockwise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 87 of file Watering\+System.\+c.
+
+\mbox{\Hypertarget{_watering_system_8h_a60de64d75454385b23995437f1d72669}\label{_watering_system_8h_a60de64d75454385b23995437f1d72669}} 
+\index{WateringSystem.h@{WateringSystem.h}!start@{start}}
+\index{start@{start}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file Watering\+System.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_watering_system_8h_a60de64d75454385b23995437f1d72669_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_watering_system_8h_a37e70a8280b8286b3dbc0eee7ed36f1f}\label{_watering_system_8h_a37e70a8280b8286b3dbc0eee7ed36f1f}} 
+\index{WateringSystem.h@{WateringSystem.h}!waterToggle@{waterToggle}}
+\index{waterToggle@{waterToggle}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{waterToggle()}{waterToggle()}}
+{\footnotesize\ttfamily void water\+Toggle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file Watering\+System.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{_watering_system_8h_a37e70a8280b8286b3dbc0eee7ed36f1f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_watering_system_8h_a8279f24cca44161d4c8044c6aee9510c}\label{_watering_system_8h_a8279f24cca44161d4c8044c6aee9510c}} 
+\index{WateringSystem.h@{WateringSystem.h}!WS\_init@{WS\_init}}
+\index{WS\_init@{WS\_init}!WateringSystem.h@{WateringSystem.h}}
+\subsubsection{\texorpdfstring{WS\_init()}{WS\_init()}}
+{\footnotesize\ttfamily void W\+S\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file Watering\+System.\+c.
+

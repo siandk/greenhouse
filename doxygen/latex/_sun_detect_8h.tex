@@ -1,0 +1,150 @@
+\hypertarget{_sun_detect_8h}{}\section{Sun\+Detect/\+Sun\+Detect.h File Reference}
+\label{_sun_detect_8h}\index{SunDetect/SunDetect.h@{SunDetect/SunDetect.h}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_sun_detect_8h_a2886631b4122738e8cf58c8d8558bc3b}{S\+D\+\_\+\+M\+U\+X\+I\+N\+IT}}~0b00000000
+\item 
+\#define \mbox{\hyperlink{_sun_detect_8h_a8fb99d336df75bfcc7c6c39107125d47}{S\+D\+\_\+\+A\+D\+C\+D\+I\+G\+I\+T\+AL}}~A\+D\+C0D
+\item 
+\#define \mbox{\hyperlink{_sun_detect_8h_a14158503f6494b2b606664e730a9da1c}{L\+I\+G\+H\+T\+P\+O\+RT}}~P\+O\+R\+TA
+\item 
+\#define \mbox{\hyperlink{_sun_detect_8h_ab49ae68c6e270a552f6c27855cd6d6b7}{L\+I\+G\+H\+T\+P\+O\+R\+T0}}~P\+A0
+\item 
+\#define \mbox{\hyperlink{_sun_detect_8h_af5043630864d024d96fc2e252af9cbea}{L\+I\+G\+H\+T\+D\+DR}}~D\+D\+RA
+\item 
+\#define \mbox{\hyperlink{_sun_detect_8h_a9de3f70d9779ff2c09d8d546d4960378}{L\+I\+G\+H\+T\+M\+I\+N\+I\+M\+UM}}~200
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_sun_detect_8h_a8f7516eb06101843ac67f8fe32d8800c}{S\+D\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Setup for A\+DC reading and datadirection for the L\+ED port. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_sun_detect_8h_af1d63455e5a91999225f25fd0cebc18e}{read\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Calls the Read\+A\+DC library with the current A\+DC pin as parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_sun_detect_8h_a99b1dcceaaa6f6d5ccfa1d694190ebcb}{light\+Toggle}} (int light\+Value)
+\item 
+void \mbox{\hyperlink{_sun_detect_8h_a83321f94ea7613b4d30731c7e497d3b5}{light\+Switch}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_sun_detect_8h_af5043630864d024d96fc2e252af9cbea}\label{_sun_detect_8h_af5043630864d024d96fc2e252af9cbea}} 
+\index{SunDetect.h@{SunDetect.h}!LIGHTDDR@{LIGHTDDR}}
+\index{LIGHTDDR@{LIGHTDDR}!SunDetect.h@{SunDetect.h}}
+\subsubsection{\texorpdfstring{LIGHTDDR}{LIGHTDDR}}
+{\footnotesize\ttfamily \#define L\+I\+G\+H\+T\+D\+DR~D\+D\+RA}
+
+Data direction register for L\+ED light 
+
+Definition at line 18 of file Sun\+Detect.\+h.
+
+\mbox{\Hypertarget{_sun_detect_8h_a9de3f70d9779ff2c09d8d546d4960378}\label{_sun_detect_8h_a9de3f70d9779ff2c09d8d546d4960378}} 
+\index{SunDetect.h@{SunDetect.h}!LIGHTMINIMUM@{LIGHTMINIMUM}}
+\index{LIGHTMINIMUM@{LIGHTMINIMUM}!SunDetect.h@{SunDetect.h}}
+\subsubsection{\texorpdfstring{LIGHTMINIMUM}{LIGHTMINIMUM}}
+{\footnotesize\ttfamily \#define L\+I\+G\+H\+T\+M\+I\+N\+I\+M\+UM~200}
+
+Minimum A\+DC value, before the L\+ED is automatically switched on/off 
+
+Definition at line 20 of file Sun\+Detect.\+h.
+
+\mbox{\Hypertarget{_sun_detect_8h_a14158503f6494b2b606664e730a9da1c}\label{_sun_detect_8h_a14158503f6494b2b606664e730a9da1c}} 
+\index{SunDetect.h@{SunDetect.h}!LIGHTPORT@{LIGHTPORT}}
+\index{LIGHTPORT@{LIGHTPORT}!SunDetect.h@{SunDetect.h}}
+\subsubsection{\texorpdfstring{LIGHTPORT}{LIGHTPORT}}
+{\footnotesize\ttfamily \#define L\+I\+G\+H\+T\+P\+O\+RT~P\+O\+R\+TA}
+
+The port used for the L\+ED light 
+
+Definition at line 16 of file Sun\+Detect.\+h.
+
+\mbox{\Hypertarget{_sun_detect_8h_ab49ae68c6e270a552f6c27855cd6d6b7}\label{_sun_detect_8h_ab49ae68c6e270a552f6c27855cd6d6b7}} 
+\index{SunDetect.h@{SunDetect.h}!LIGHTPORT0@{LIGHTPORT0}}
+\index{LIGHTPORT0@{LIGHTPORT0}!SunDetect.h@{SunDetect.h}}
+\subsubsection{\texorpdfstring{LIGHTPORT0}{LIGHTPORT0}}
+{\footnotesize\ttfamily \#define L\+I\+G\+H\+T\+P\+O\+R\+T0~P\+A0}
+
+Output used for the L\+ED light 
+
+Definition at line 17 of file Sun\+Detect.\+h.
+
+\mbox{\Hypertarget{_sun_detect_8h_a8fb99d336df75bfcc7c6c39107125d47}\label{_sun_detect_8h_a8fb99d336df75bfcc7c6c39107125d47}} 
+\index{SunDetect.h@{SunDetect.h}!SD\_ADCDIGITAL@{SD\_ADCDIGITAL}}
+\index{SD\_ADCDIGITAL@{SD\_ADCDIGITAL}!SunDetect.h@{SunDetect.h}}
+\subsubsection{\texorpdfstring{SD\_ADCDIGITAL}{SD\_ADCDIGITAL}}
+{\footnotesize\ttfamily \#define S\+D\+\_\+\+A\+D\+C\+D\+I\+G\+I\+T\+AL~A\+D\+C0D}
+
+Digital A\+DC\#. For power saving 
+
+Definition at line 14 of file Sun\+Detect.\+h.
+
+\mbox{\Hypertarget{_sun_detect_8h_a2886631b4122738e8cf58c8d8558bc3b}\label{_sun_detect_8h_a2886631b4122738e8cf58c8d8558bc3b}} 
+\index{SunDetect.h@{SunDetect.h}!SD\_MUXINIT@{SD\_MUXINIT}}
+\index{SD\_MUXINIT@{SD\_MUXINIT}!SunDetect.h@{SunDetect.h}}
+\subsubsection{\texorpdfstring{SD\_MUXINIT}{SD\_MUXINIT}}
+{\footnotesize\ttfamily \#define S\+D\+\_\+\+M\+U\+X\+I\+N\+IT~0b00000000}
+
+M\+UX value for the chosen A\+DC pin. See table 26-\/4 
+
+Definition at line 13 of file Sun\+Detect.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_sun_detect_8h_a83321f94ea7613b4d30731c7e497d3b5}\label{_sun_detect_8h_a83321f94ea7613b4d30731c7e497d3b5}} 
+\index{SunDetect.h@{SunDetect.h}!lightSwitch@{lightSwitch}}
+\index{lightSwitch@{lightSwitch}!SunDetect.h@{SunDetect.h}}
+\subsubsection{\texorpdfstring{lightSwitch()}{lightSwitch()}}
+{\footnotesize\ttfamily void light\+Switch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Toggles the L\+ED on/off 
+
+Definition at line 59 of file Sun\+Detect.\+c.
+
+\mbox{\Hypertarget{_sun_detect_8h_a99b1dcceaaa6f6d5ccfa1d694190ebcb}\label{_sun_detect_8h_a99b1dcceaaa6f6d5ccfa1d694190ebcb}} 
+\index{SunDetect.h@{SunDetect.h}!lightToggle@{lightToggle}}
+\index{lightToggle@{lightToggle}!SunDetect.h@{SunDetect.h}}
+\subsubsection{\texorpdfstring{lightToggle()}{lightToggle()}}
+{\footnotesize\ttfamily void light\+Toggle (\begin{DoxyParamCaption}\item[{int}]{light\+Value }\end{DoxyParamCaption})}
+
+Toggles the L\+ED based on the configured minimum lighting level. 
+
+Definition at line 45 of file Sun\+Detect.\+c.
+
+\mbox{\Hypertarget{_sun_detect_8h_af1d63455e5a91999225f25fd0cebc18e}\label{_sun_detect_8h_af1d63455e5a91999225f25fd0cebc18e}} 
+\index{SunDetect.h@{SunDetect.h}!readLight@{readLight}}
+\index{readLight@{readLight}!SunDetect.h@{SunDetect.h}}
+\subsubsection{\texorpdfstring{readLight()}{readLight()}}
+{\footnotesize\ttfamily int read\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the Read\+A\+DC library with the current A\+DC pin as parameter. 
+
+
+
+Definition at line 37 of file Sun\+Detect.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{_sun_detect_8h_af1d63455e5a91999225f25fd0cebc18e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_sun_detect_8h_a8f7516eb06101843ac67f8fe32d8800c}\label{_sun_detect_8h_a8f7516eb06101843ac67f8fe32d8800c}} 
+\index{SunDetect.h@{SunDetect.h}!SD\_init@{SD\_init}}
+\index{SD\_init@{SD\_init}!SunDetect.h@{SunDetect.h}}
+\subsubsection{\texorpdfstring{SD\_init()}{SD\_init()}}
+{\footnotesize\ttfamily void S\+D\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Setup for A\+DC reading and datadirection for the L\+ED port. 
+
+
+
+Definition at line 24 of file Sun\+Detect.\+c.
+

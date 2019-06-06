@@ -1,0 +1,89 @@
+\hypertarget{_matrix_keyboard_8c}{}\section{Matrix\+Keyboard/\+Matrix\+Keyboard.c File Reference}
+\label{_matrix_keyboard_8c}\index{MatrixKeyboard/MatrixKeyboard.c@{MatrixKeyboard/MatrixKeyboard.c}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Matrix\+Keyboard.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_matrix_keyboard_8c_a87ea16558aee0db83e780480b44b771b}{M\+K\+\_\+init}} ()
+\item 
+int \mbox{\hyperlink{_matrix_keyboard_8c_a93cd082a8574109e1ef3dbd0ac8f3f1e}{read\+Row}} ()
+\item 
+int \mbox{\hyperlink{_matrix_keyboard_8c_adb1648ef5f98f99ddb64ff051c36547a}{column\+Scan}} ()
+\item 
+char \mbox{\hyperlink{_matrix_keyboard_8c_ad922f083da28166394ec75aa94bd6c5e}{key\+Decode}} (int active\+Port, int \mbox{\hyperlink{main_8c_a703c89242b7bd601fcd3d6684c992ea5}{active\+Row}})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_matrix_keyboard_8c_abb6c64ce5439cef9c5c5f32cc312bb04}{bits}} \mbox{[}$\,$\mbox{]} = \{\mbox{\hyperlink{_matrix_keyboard_8h_a9c43cc82671177bdb2b4ac78035ed01b}{C\+O\+L1}}, \mbox{\hyperlink{_matrix_keyboard_8h_a90090f6ae9c2a1d93ab868b45baa545d}{C\+O\+L2}}, \mbox{\hyperlink{_matrix_keyboard_8h_ae1d67ac01033bdec24bc3e4ea65a857c}{C\+O\+L3}}, \mbox{\hyperlink{_matrix_keyboard_8h_a40df755b4b78c1e753f39978d90889fc}{C\+O\+L4}}\}
+\item 
+char \mbox{\hyperlink{_matrix_keyboard_8c_a1c91d0638fc27a8e0005197320eedd00}{keyboard}} \mbox{[}4\mbox{]}\mbox{[}5\mbox{]} = \{\char`\"{}123\+A\char`\"{}, \char`\"{}456\+B\char`\"{}, \char`\"{}789\+C\char`\"{}, \char`\"{}$\ast$0\#\+D\char`\"{}\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_matrix_keyboard_8c_adb1648ef5f98f99ddb64ff051c36547a}\label{_matrix_keyboard_8c_adb1648ef5f98f99ddb64ff051c36547a}} 
+\index{MatrixKeyboard.c@{MatrixKeyboard.c}!columnScan@{columnScan}}
+\index{columnScan@{columnScan}!MatrixKeyboard.c@{MatrixKeyboard.c}}
+\subsubsection{\texorpdfstring{columnScan()}{columnScan()}}
+{\footnotesize\ttfamily int column\+Scan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 51 of file Matrix\+Keyboard.\+c.
+
+\mbox{\Hypertarget{_matrix_keyboard_8c_ad922f083da28166394ec75aa94bd6c5e}\label{_matrix_keyboard_8c_ad922f083da28166394ec75aa94bd6c5e}} 
+\index{MatrixKeyboard.c@{MatrixKeyboard.c}!keyDecode@{keyDecode}}
+\index{keyDecode@{keyDecode}!MatrixKeyboard.c@{MatrixKeyboard.c}}
+\subsubsection{\texorpdfstring{keyDecode()}{keyDecode()}}
+{\footnotesize\ttfamily char key\+Decode (\begin{DoxyParamCaption}\item[{int}]{active\+Port,  }\item[{int}]{active\+Row }\end{DoxyParamCaption})}
+
+
+
+Definition at line 75 of file Matrix\+Keyboard.\+c.
+
+\mbox{\Hypertarget{_matrix_keyboard_8c_a87ea16558aee0db83e780480b44b771b}\label{_matrix_keyboard_8c_a87ea16558aee0db83e780480b44b771b}} 
+\index{MatrixKeyboard.c@{MatrixKeyboard.c}!MK\_init@{MK\_init}}
+\index{MK\_init@{MK\_init}!MatrixKeyboard.c@{MatrixKeyboard.c}}
+\subsubsection{\texorpdfstring{MK\_init()}{MK\_init()}}
+{\footnotesize\ttfamily void M\+K\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file Matrix\+Keyboard.\+c.
+
+\mbox{\Hypertarget{_matrix_keyboard_8c_a93cd082a8574109e1ef3dbd0ac8f3f1e}\label{_matrix_keyboard_8c_a93cd082a8574109e1ef3dbd0ac8f3f1e}} 
+\index{MatrixKeyboard.c@{MatrixKeyboard.c}!readRow@{readRow}}
+\index{readRow@{readRow}!MatrixKeyboard.c@{MatrixKeyboard.c}}
+\subsubsection{\texorpdfstring{readRow()}{readRow()}}
+{\footnotesize\ttfamily int read\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Matrix\+Keyboard.\+c.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_matrix_keyboard_8c_abb6c64ce5439cef9c5c5f32cc312bb04}\label{_matrix_keyboard_8c_abb6c64ce5439cef9c5c5f32cc312bb04}} 
+\index{MatrixKeyboard.c@{MatrixKeyboard.c}!bits@{bits}}
+\index{bits@{bits}!MatrixKeyboard.c@{MatrixKeyboard.c}}
+\subsubsection{\texorpdfstring{bits}{bits}}
+{\footnotesize\ttfamily uint8\+\_\+t bits\mbox{[}$\,$\mbox{]} = \{\mbox{\hyperlink{_matrix_keyboard_8h_a9c43cc82671177bdb2b4ac78035ed01b}{C\+O\+L1}}, \mbox{\hyperlink{_matrix_keyboard_8h_a90090f6ae9c2a1d93ab868b45baa545d}{C\+O\+L2}}, \mbox{\hyperlink{_matrix_keyboard_8h_ae1d67ac01033bdec24bc3e4ea65a857c}{C\+O\+L3}}, \mbox{\hyperlink{_matrix_keyboard_8h_a40df755b4b78c1e753f39978d90889fc}{C\+O\+L4}}\}}
+
+
+
+Definition at line 49 of file Matrix\+Keyboard.\+c.
+
+\mbox{\Hypertarget{_matrix_keyboard_8c_a1c91d0638fc27a8e0005197320eedd00}\label{_matrix_keyboard_8c_a1c91d0638fc27a8e0005197320eedd00}} 
+\index{MatrixKeyboard.c@{MatrixKeyboard.c}!keyboard@{keyboard}}
+\index{keyboard@{keyboard}!MatrixKeyboard.c@{MatrixKeyboard.c}}
+\subsubsection{\texorpdfstring{keyboard}{keyboard}}
+{\footnotesize\ttfamily char keyboard\mbox{[}4\mbox{]}\mbox{[}5\mbox{]} = \{\char`\"{}123\+A\char`\"{}, \char`\"{}456\+B\char`\"{}, \char`\"{}789\+C\char`\"{}, \char`\"{}$\ast$0\#\+D\char`\"{}\}}
+
+
+
+Definition at line 73 of file Matrix\+Keyboard.\+c.
+

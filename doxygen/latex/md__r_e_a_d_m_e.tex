@@ -1,0 +1,342 @@
+\subsection*{General}
+
+All the components have configurable settings in their include files. This means the components can easily be reconfigured to use different ports, timers, etc.
+
+Additionally, all components have an initialization function named in the style of S\+D\+\_\+init, W\+D\+\_\+init, etc. These functions are standalone, so the components can be used independently of eachother.
+
+The documentation below shows the components configured with their default settings
+
+\subsection*{Greenhouse}
+
+This is the main program. Consisting of a \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}, and 2 timers.
+
+The first timer (Timer 1) controls the automatic controls, and the L\+CD display output
+
+The timer is set up with a 2 second delay, and includes the watchdog timer reset (The watchdog timer has a 4 second timeout)
+
+Delay\+:
+
+
+\begin{DoxyItemize}
+\item T=1f=116M=62.\+5ns
+\item (Tdelay / (Tcpu $\ast$ Prescaler)) -\/ 1 = (2s / (62,5n\+Sek $\ast$ 1024)) -\/ 1 = 31249
+\end{DoxyItemize}
+
+The \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}} functions sole purpose is to start the watering system, if the global W\+S\+\_\+flag has been set to 1.
+
+The reason for using \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}} for the wateringsystem, is due to the software delay, between the steps in the stepmotor pattern.
+
+By using \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}, we make sure a timer is not halted, while the wateringsystem is running.
+
+\subsection*{Sun\+Detect}
+
+Photocell and L\+ED control
+
+
+
+
+
+Uses an A\+DC pin for reading the sensor data, and a port for toggling the L\+ED
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+A\+D\+M\+UX  &R\+E\+F\+S0  &&&\\\cline{1-5}
+D\+I\+D\+R0  &A\+D\+C0D  &&&\\\cline{1-5}
+A\+D\+C\+S\+RA  &A\+D\+EN  &A\+D\+P\+S2  &A\+D\+P\+S1  &A\+D\+P\+S0   \\\cline{1-5}
+D\+D\+RA  &P\+A0  &&&\\\cline{1-5}
+\end{longtabu}
+
+
+A\+DC pin 0 M\+UX\+: {\bfseries{0b00000000}}
+
+\subsection*{Water\+Detect}
+
+Waterlevel sensor
+
+
+
+ Uses an A\+DC pin to read the water level
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+A\+D\+M\+UX  &R\+E\+F\+S0  &&&\\\cline{1-5}
+D\+I\+D\+R0  &A\+D\+C3D  &&&\\\cline{1-5}
+A\+D\+C\+S\+RA  &A\+D\+EN  &A\+D\+P\+S2  &A\+D\+P\+S1  &A\+D\+P\+S0   \\\cline{1-5}
+\end{longtabu}
+
+
+A\+DC pin 3 M\+UX\+: {\bfseries{0b00000011}}
+
+\subsection*{Moisture\+Detect}
+
+Ground moisture sensor
+
+
+
+ Uses an A\+DC pin to read the moisture in the ground.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+A\+D\+M\+UX  &R\+E\+F\+S0  &&&\\\cline{1-5}
+D\+I\+D\+R0  &A\+D\+C2D  &&&\\\cline{1-5}
+A\+D\+C\+S\+RA  &A\+D\+EN  &A\+D\+P\+S2  &A\+D\+P\+S1  &A\+D\+P\+S0   \\\cline{1-5}
+\end{longtabu}
+
+
+A\+DC pin 2 M\+UX\+: {\bfseries{0b00000010}}
+
+\subsection*{Temp\+Detect}
+
+Temperature sensor
+
+
+
+ Uses an A\+DC pin to read the temperature
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+A\+D\+M\+UX  &R\+E\+F\+S0  &&&\\\cline{1-5}
+D\+I\+D\+R0  &A\+D\+C1D  &&&\\\cline{1-5}
+A\+D\+C\+S\+RA  &A\+D\+EN  &A\+D\+P\+S2  &A\+D\+P\+S1  &A\+D\+P\+S0   \\\cline{1-5}
+\end{longtabu}
+
+
+A\+DC pin 1 M\+UX\+: {\bfseries{0b00000001}}
+
+\subsection*{Window\+Open}
+
+Uses a servo motor to automatically or manually open a window
+
+
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+T\+C\+C\+R3A  &C\+O\+M3\+B1  &&&\\\cline{1-5}
+T\+C\+C\+R3B  &W\+G\+M33  &C\+S31  &&\\\cline{1-5}
+D\+D\+RE  &P\+E4  &&&\\\cline{1-5}
+\end{longtabu}
+
+
+Timer 3 configuration (servo motor)\+:
+\begin{DoxyItemize}
+\item Phase and frequency correct mode
+\item Clear O\+C\+R3B on compare match
+\item Prescaler /8
+\item Top (I\+C\+R3)\+: 20000
+\end{DoxyItemize}
+
+Top (50hz)= fclk / (2 $\ast$ N $\ast$ hz) $\vert$ 16e6 / (2 $\ast$ 8 $\ast$ 50) = 20000
+
+\subsection*{Matrix\+Keyboard}
+
+Keyboard using 4 output ports and 4 input pins
+
+
+
+
+
+The 4 output ports are used for the keyboard columns, and the 4 input pins are used for the rows
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+D\+D\+RK  &P\+K0  &P\+K1  &P\+K2  &P\+K3   \\\cline{1-5}
+P\+O\+R\+TK  &0x\+FE  &&&\\\cline{1-5}
+T\+C\+C\+R4B  &C\+S41  &C\+S40  &W\+G\+M42  &\\\cline{1-5}
+T\+I\+M\+S\+K4  &O\+C\+I\+E4A  &O\+C\+I\+E4B  &&\\\cline{1-5}
+\end{longtabu}
+
+
+The timer delay for the Matrix Keyboard has been set using trial and error, to find the best fit, instead of calculating a delay
+
+\subsubsection*{Column and row overview}
+
+{\bfseries{Port}}\+: K
+
+
+\begin{DoxyItemize}
+\item Column 4\+: 0b00001110 P\+K0
+\item Column 3\+: 0b00001101 P\+K1
+\item Column 2\+: 0b00001011 P\+K2
+\item Column 1\+: 0b00000111 P\+K3
+\end{DoxyItemize}
+
+{\bfseries{Pin}}\+: K 4-\/7
+
+\subsection*{Watering\+System}
+
+Wateringsystem using a stepmotor and a servo motor
+
+
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Register  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+D\+D\+RB  &P\+B0  &P\+B1  &P\+B2  &P\+B3   \\\cline{1-5}
+D\+D\+RE  &P\+E5  &&&\\\cline{1-5}
+T\+C\+C\+R3A  &C\+O\+M3\+C1  &C\+S40  &W\+G\+M42  &\\\cline{1-5}
+T\+C\+C\+R3B  &W\+G\+M33  &C\+S31  &&\\\cline{1-5}
+\end{longtabu}
+
+
+Timer 3 configuration (servo motor)\+:
+\begin{DoxyItemize}
+\item Phase and frequency correct mode
+\item Clear O\+C\+R3C on compare match
+\item Prescaler /8
+\item Top (I\+C\+R3)\+: 20000
+\end{DoxyItemize}
+
+Top(50hz) = fclk / (2 $\ast$ N $\ast$ hz) $\vert$ 16e6 / (2 $\ast$ 8 $\ast$ 50) = 20000
+
+\subsubsection*{Stepmotor details}
+
+The rotate\+Clockwise/counter\+Clockwise function moves the stepmotor 8 steps.
+
+It takes 4096 steps for a full revolution of the stepmotor. This means that for a full revolution, the movement function has to be run 512 times
+\begin{DoxyItemize}
+\item 4096 / 8 = 512
+\end{DoxyItemize}
+
+{\itshape {\bfseries{Stepmotor pattern\+:}}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P\+B0  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P\+B1  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P\+B2  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P\+B3  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P\+B0  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P\+B1  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P\+B2  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P\+B3  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+1  &0  &0  &0  &\\\cline{1-5}
+1  &1  &0  &0  &\\\cline{1-5}
+0  &1  &0  &0  &\\\cline{1-5}
+0  &1  &1  &0  &\\\cline{1-5}
+0  &0  &1  &0  &\\\cline{1-5}
+0  &0  &1  &1  &\\\cline{1-5}
+0  &0  &0  &1  &\\\cline{1-5}
+1  &0  &0  &1  &\\\cline{1-5}
+\end{longtabu}
+
+
+\subsection*{Quick Overview}
+
+\subsubsection*{A\+DC}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ A\+DC Pin  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Usage  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+UX  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ A\+DC Pin  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Usage  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+UX  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+Pin 0  &Photocell  &0b00000000  &&\\\cline{1-5}
+Pin 1  &Temperature  &0b00000001  &&\\\cline{1-5}
+Pin 2  &Moisture  &0b00000010  &&\\\cline{1-5}
+Pin 3  &Water level  &0b00000011  &&\\\cline{1-5}
+\end{longtabu}
+
+
+\subsubsection*{P\+O\+R\+TS}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Port  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Usage  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pxn-\/\+Pxn  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ In/\+Out  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Port  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Usage  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pxn-\/\+Pxn  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ In/\+Out  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-5}
+\endhead
+A  &L\+ED toggle  &0  &Out  &\\\cline{1-5}
+B  &Stepmotor  &0-\/3  &Out  &\\\cline{1-5}
+E  &Relay  &1  &Out  &\\\cline{1-5}
+E  &WO Servo(\+P\+W\+M)  &4  &Out  &\\\cline{1-5}
+E  &WS Servo(\+P\+W\+M)  &5  &Out  &\\\cline{1-5}
+K  &Keyboard Col  &0-\/3  &Out  &\\\cline{1-5}
+K  &Keyboard Row  &4-\/7  &In  &\\\cline{1-5}
+\end{longtabu}
+\subsubsection*{T\+I\+M\+E\+RS}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{10}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Timer \#  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mode  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnA  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnA \#  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnB  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnB \#  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnC  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnC \#  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Prescaler  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ In files   }\\\cline{1-10}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Timer \#  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mode  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnA  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnA \#  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnB  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnB \#  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnC  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ O\+C\+RnC \#  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Prescaler  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ In files   }\\\cline{1-10}
+\endhead
+Timer 1  &0  &Sensor read interrupt  &31248‬  &&&&&1024  &main   \\\cline{1-10}
+&&&&&&&&&\\\cline{1-10}
+Timer 3  &8  &&&WO Servo  &1-\/2000  &WS Servo  &1-\/2000  &8  &Watering\+System, Window\+Open   \\\cline{1-10}
+Timer 4  &4  &Keypad column scan  &64000  &Keypad row scan  &32000  &&&8  &main, Matrix\+Keyboard   \\\cline{1-10}
+\end{longtabu}
+
+
+\subsubsection*{By Component}

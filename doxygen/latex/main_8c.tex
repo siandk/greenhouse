@@ -1,0 +1,242 @@
+\hypertarget{main_8c}{}\section{Greenhouse/main.c File Reference}
+\label{main_8c}\index{Greenhouse/main.c@{Greenhouse/main.c}}
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include $<$avr/wdt.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stdio\+\_\+setup.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Greenhouse\+Init.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Window\+Open.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sun\+Detect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Temp\+Detect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Watering\+System.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Water\+Detect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Matrix\+Keyboard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Manual\+Control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Moisture\+Detect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lcd.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~16000000\+UL
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a94ce86ff19391f20792738be5a80aeb5}{run\+Command}} (key)
+\item 
+void \mbox{\hyperlink{main_8c_a840078f94ecb0e7bc7b965ae16b63e26}{print\+Status}} (float temp, int light\+Level, int moisture\+Level)
+\item 
+void \mbox{\hyperlink{main_8c_ae1b7aca40ce757b1bd245c32ff9e2aa7}{manual\+Control}} (char command)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\item 
+\mbox{\hyperlink{main_8c_ad39420cdd896dd12c68e36313139d0a5}{I\+SR}} (T\+I\+M\+E\+R1\+\_\+\+C\+O\+M\+P\+A\+\_\+vect)
+\item 
+\mbox{\hyperlink{main_8c_a8aa6a32130ab26be17555166513a23ba}{I\+SR}} (T\+I\+M\+E\+R4\+\_\+\+C\+O\+M\+P\+A\+\_\+vect)
+\item 
+\mbox{\hyperlink{main_8c_afb509f06569035c0093abd699b2eb45e}{I\+SR}} (T\+I\+M\+E\+R4\+\_\+\+C\+O\+M\+P\+B\+\_\+vect)
+\item 
+void \mbox{\hyperlink{main_8c_a47185b5bdfa941d3ca83d053544b42ea}{run\+Command}} (char key)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{main_8c_a000e34997df38c2005a83d63e67d9282}{mode}} = \textquotesingle{}a\textquotesingle{}
+\item 
+int \mbox{\hyperlink{main_8c_aa27fc28d0bd31bb86e68c28aff8c1cb7}{active\+Column}}
+\item 
+int \mbox{\hyperlink{main_8c_a703c89242b7bd601fcd3d6684c992ea5}{active\+Row}}
+\item 
+int \mbox{\hyperlink{main_8c_a5836b807ca8666bd036cb74ffc0f6dd7}{W\+S\+\_\+flag}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{main.c@{main.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~16000000\+UL}
+
+
+
+Definition at line 2 of file main.\+c.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_ad39420cdd896dd12c68e36313139d0a5}\label{main_8c_ad39420cdd896dd12c68e36313139d0a5}} 
+\index{main.c@{main.c}!ISR@{ISR}}
+\index{ISR@{ISR}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{ISR()}{ISR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily I\+SR (\begin{DoxyParamCaption}\item[{T\+I\+M\+E\+R1\+\_\+\+C\+O\+M\+P\+A\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+Interrupt timer for sensor reading, component control, and L\+CD output. The watchdog timer is also reset here. 
+
+Definition at line 51 of file main.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ad39420cdd896dd12c68e36313139d0a5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a8aa6a32130ab26be17555166513a23ba}\label{main_8c_a8aa6a32130ab26be17555166513a23ba}} 
+\index{main.c@{main.c}!ISR@{ISR}}
+\index{ISR@{ISR}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{ISR()}{ISR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily I\+SR (\begin{DoxyParamCaption}\item[{T\+I\+M\+E\+R4\+\_\+\+C\+O\+M\+P\+A\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+Interrupt for reading the column of the keypad 
+
+Definition at line 66 of file main.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{main_8c_a8aa6a32130ab26be17555166513a23ba_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_afb509f06569035c0093abd699b2eb45e}\label{main_8c_afb509f06569035c0093abd699b2eb45e}} 
+\index{main.c@{main.c}!ISR@{ISR}}
+\index{ISR@{ISR}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{ISR()}{ISR()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily I\+SR (\begin{DoxyParamCaption}\item[{T\+I\+M\+E\+R4\+\_\+\+C\+O\+M\+P\+B\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+Interrupt for reading the row of the keypad 
+
+Definition at line 73 of file main.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{main_8c_afb509f06569035c0093abd699b2eb45e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file main.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_ae1b7aca40ce757b1bd245c32ff9e2aa7}\label{main_8c_ae1b7aca40ce757b1bd245c32ff9e2aa7}} 
+\index{main.c@{main.c}!manualControl@{manualControl}}
+\index{manualControl@{manualControl}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{manualControl()}{manualControl()}}
+{\footnotesize\ttfamily void manual\+Control (\begin{DoxyParamCaption}\item[{char}]{command }\end{DoxyParamCaption})}
+
+Controls components based on keypress 
+
+Definition at line 131 of file main.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ae1b7aca40ce757b1bd245c32ff9e2aa7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a840078f94ecb0e7bc7b965ae16b63e26}\label{main_8c_a840078f94ecb0e7bc7b965ae16b63e26}} 
+\index{main.c@{main.c}!printStatus@{printStatus}}
+\index{printStatus@{printStatus}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{printStatus()}{printStatus()}}
+{\footnotesize\ttfamily void print\+Status (\begin{DoxyParamCaption}\item[{float}]{temp,  }\item[{int}]{light\+Level,  }\item[{int}]{moisture\+Level }\end{DoxyParamCaption})}
+
+Print the sensor readings to the L\+CD display Also displays the current mode of operation 
+
+Definition at line 107 of file main.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a840078f94ecb0e7bc7b965ae16b63e26_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a94ce86ff19391f20792738be5a80aeb5}\label{main_8c_a94ce86ff19391f20792738be5a80aeb5}} 
+\index{main.c@{main.c}!runCommand@{runCommand}}
+\index{runCommand@{runCommand}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{runCommand()}{runCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void run\+Command (\begin{DoxyParamCaption}\item[{key}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a47185b5bdfa941d3ca83d053544b42ea}\label{main_8c_a47185b5bdfa941d3ca83d053544b42ea}} 
+\index{main.c@{main.c}!runCommand@{runCommand}}
+\index{runCommand@{runCommand}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{runCommand()}{runCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void run\+Command (\begin{DoxyParamCaption}\item[{char}]{key }\end{DoxyParamCaption})}
+
+Interpret the pressed key 
+
+Definition at line 86 of file main.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a47185b5bdfa941d3ca83d053544b42ea_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_aa27fc28d0bd31bb86e68c28aff8c1cb7}\label{main_8c_aa27fc28d0bd31bb86e68c28aff8c1cb7}} 
+\index{main.c@{main.c}!activeColumn@{activeColumn}}
+\index{activeColumn@{activeColumn}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{activeColumn}{activeColumn}}
+{\footnotesize\ttfamily int active\+Column}
+
+
+
+Definition at line 26 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a703c89242b7bd601fcd3d6684c992ea5}\label{main_8c_a703c89242b7bd601fcd3d6684c992ea5}} 
+\index{main.c@{main.c}!activeRow@{activeRow}}
+\index{activeRow@{activeRow}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{activeRow}{activeRow}}
+{\footnotesize\ttfamily int active\+Row}
+
+
+
+Definition at line 27 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a000e34997df38c2005a83d63e67d9282}\label{main_8c_a000e34997df38c2005a83d63e67d9282}} 
+\index{main.c@{main.c}!mode@{mode}}
+\index{mode@{mode}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily char mode = \textquotesingle{}a\textquotesingle{}}
+
+
+
+Definition at line 25 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a5836b807ca8666bd036cb74ffc0f6dd7}\label{main_8c_a5836b807ca8666bd036cb74ffc0f6dd7}} 
+\index{main.c@{main.c}!WS\_flag@{WS\_flag}}
+\index{WS\_flag@{WS\_flag}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{WS\_flag}{WS\_flag}}
+{\footnotesize\ttfamily int W\+S\+\_\+flag = 0}
+
+
+
+Definition at line 28 of file main.\+c.
+

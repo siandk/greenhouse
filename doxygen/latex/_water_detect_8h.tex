@@ -1,0 +1,101 @@
+\hypertarget{_water_detect_8h}{}\section{Water\+Detect/\+Water\+Detect.h File Reference}
+\label{_water_detect_8h}\index{WaterDetect/WaterDetect.h@{WaterDetect/WaterDetect.h}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_water_detect_8h_a5485548c10544c222a8e781b5cc95b66}{W\+D\+\_\+\+M\+U\+X\+I\+N\+IT}}~0b00000011
+\item 
+\#define \mbox{\hyperlink{_water_detect_8h_aac73780e90eff164c653aa915aeba47d}{W\+D\+\_\+\+A\+D\+C\+D\+I\+G\+I\+T\+AL}}~A\+D\+C3D
+\item 
+\#define \mbox{\hyperlink{_water_detect_8h_a96269a79c7477cecd48fdd45cfc2787d}{W\+A\+T\+E\+R\+L\+I\+M\+IT}}~220
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_water_detect_8h_aeb9ed447fde81be214164e4493656c49}{W\+D\+\_\+init}} ()
+\item 
+int \mbox{\hyperlink{_water_detect_8h_a74873106b8fd5610350a8924f5c81c5f}{water\+OK}} ()
+\item 
+int \mbox{\hyperlink{_water_detect_8h_a431c255382aa0831defb08db1126ff7e}{read\+Level}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_water_detect_8h_a96269a79c7477cecd48fdd45cfc2787d}\label{_water_detect_8h_a96269a79c7477cecd48fdd45cfc2787d}} 
+\index{WaterDetect.h@{WaterDetect.h}!WATERLIMIT@{WATERLIMIT}}
+\index{WATERLIMIT@{WATERLIMIT}!WaterDetect.h@{WaterDetect.h}}
+\subsubsection{\texorpdfstring{WATERLIMIT}{WATERLIMIT}}
+{\footnotesize\ttfamily \#define W\+A\+T\+E\+R\+L\+I\+M\+IT~220}
+
+
+
+Definition at line 17 of file Water\+Detect.\+h.
+
+\mbox{\Hypertarget{_water_detect_8h_aac73780e90eff164c653aa915aeba47d}\label{_water_detect_8h_aac73780e90eff164c653aa915aeba47d}} 
+\index{WaterDetect.h@{WaterDetect.h}!WD\_ADCDIGITAL@{WD\_ADCDIGITAL}}
+\index{WD\_ADCDIGITAL@{WD\_ADCDIGITAL}!WaterDetect.h@{WaterDetect.h}}
+\subsubsection{\texorpdfstring{WD\_ADCDIGITAL}{WD\_ADCDIGITAL}}
+{\footnotesize\ttfamily \#define W\+D\+\_\+\+A\+D\+C\+D\+I\+G\+I\+T\+AL~A\+D\+C3D}
+
+
+
+Definition at line 14 of file Water\+Detect.\+h.
+
+\mbox{\Hypertarget{_water_detect_8h_a5485548c10544c222a8e781b5cc95b66}\label{_water_detect_8h_a5485548c10544c222a8e781b5cc95b66}} 
+\index{WaterDetect.h@{WaterDetect.h}!WD\_MUXINIT@{WD\_MUXINIT}}
+\index{WD\_MUXINIT@{WD\_MUXINIT}!WaterDetect.h@{WaterDetect.h}}
+\subsubsection{\texorpdfstring{WD\_MUXINIT}{WD\_MUXINIT}}
+{\footnotesize\ttfamily \#define W\+D\+\_\+\+M\+U\+X\+I\+N\+IT~0b00000011}
+
+
+
+Definition at line 13 of file Water\+Detect.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_water_detect_8h_a431c255382aa0831defb08db1126ff7e}\label{_water_detect_8h_a431c255382aa0831defb08db1126ff7e}} 
+\index{WaterDetect.h@{WaterDetect.h}!readLevel@{readLevel}}
+\index{readLevel@{readLevel}!WaterDetect.h@{WaterDetect.h}}
+\subsubsection{\texorpdfstring{readLevel()}{readLevel()}}
+{\footnotesize\ttfamily int read\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Water\+Detect.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{_water_detect_8h_a431c255382aa0831defb08db1126ff7e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_water_detect_8h_a74873106b8fd5610350a8924f5c81c5f}\label{_water_detect_8h_a74873106b8fd5610350a8924f5c81c5f}} 
+\index{WaterDetect.h@{WaterDetect.h}!waterOK@{waterOK}}
+\index{waterOK@{waterOK}!WaterDetect.h@{WaterDetect.h}}
+\subsubsection{\texorpdfstring{waterOK()}{waterOK()}}
+{\footnotesize\ttfamily int water\+OK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file Water\+Detect.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_water_detect_8h_a74873106b8fd5610350a8924f5c81c5f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_water_detect_8h_aeb9ed447fde81be214164e4493656c49}\label{_water_detect_8h_aeb9ed447fde81be214164e4493656c49}} 
+\index{WaterDetect.h@{WaterDetect.h}!WD\_init@{WD\_init}}
+\index{WD\_init@{WD\_init}!WaterDetect.h@{WaterDetect.h}}
+\subsubsection{\texorpdfstring{WD\_init()}{WD\_init()}}
+{\footnotesize\ttfamily void W\+D\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file Water\+Detect.\+c.
+

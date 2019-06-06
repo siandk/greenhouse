@@ -1,0 +1,99 @@
+\hypertarget{_sun_detect_8c}{}\section{Sun\+Detect/\+Sun\+Detect.c File Reference}
+\label{_sun_detect_8c}\index{SunDetect/SunDetect.c@{SunDetect/SunDetect.c}}
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Sun\+Detect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Read\+A\+D\+C.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_sun_detect_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~16000000\+UL
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_sun_detect_8c_a0cfa8bf08501f1c19d2357856d4236ae}{S\+D\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Setup for A\+DC reading and datadirection for the L\+ED port. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_sun_detect_8c_af1d63455e5a91999225f25fd0cebc18e}{read\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Calls the Read\+A\+DC library with the current A\+DC pin as parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_sun_detect_8c_a99b1dcceaaa6f6d5ccfa1d694190ebcb}{light\+Toggle}} (int light\+Value)
+\item 
+void \mbox{\hyperlink{_sun_detect_8c_a83321f94ea7613b4d30731c7e497d3b5}{light\+Switch}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_sun_detect_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{_sun_detect_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{SunDetect.c@{SunDetect.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!SunDetect.c@{SunDetect.c}}
+\subsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~16000000\+UL}
+
+Title\+: Photocell \& L\+ED control library Author\+: Simon
+
+D\+E\+S\+C\+R\+I\+P\+T\+I\+ON Initializes the A\+DC for sensor reading and the port for L\+ED control. A\+DC data is read using the Read\+A\+DC library.
+
+Includes functions for automatically controlling the L\+ED depending on Photocell reading, and functions for manually controlling the L\+ED
+
+A\+DC and P\+O\+RT configurations can be set in the include \mbox{\hyperlink{_sun_detect_8h}{Sun\+Detect.\+h}} 
+
+Definition at line 21 of file Sun\+Detect.\+c.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_sun_detect_8c_a83321f94ea7613b4d30731c7e497d3b5}\label{_sun_detect_8c_a83321f94ea7613b4d30731c7e497d3b5}} 
+\index{SunDetect.c@{SunDetect.c}!lightSwitch@{lightSwitch}}
+\index{lightSwitch@{lightSwitch}!SunDetect.c@{SunDetect.c}}
+\subsubsection{\texorpdfstring{lightSwitch()}{lightSwitch()}}
+{\footnotesize\ttfamily void light\+Switch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Toggles the L\+ED on/off 
+
+Definition at line 59 of file Sun\+Detect.\+c.
+
+\mbox{\Hypertarget{_sun_detect_8c_a99b1dcceaaa6f6d5ccfa1d694190ebcb}\label{_sun_detect_8c_a99b1dcceaaa6f6d5ccfa1d694190ebcb}} 
+\index{SunDetect.c@{SunDetect.c}!lightToggle@{lightToggle}}
+\index{lightToggle@{lightToggle}!SunDetect.c@{SunDetect.c}}
+\subsubsection{\texorpdfstring{lightToggle()}{lightToggle()}}
+{\footnotesize\ttfamily void light\+Toggle (\begin{DoxyParamCaption}\item[{int}]{light\+Value }\end{DoxyParamCaption})}
+
+Toggles the L\+ED based on the configured minimum lighting level. 
+
+Definition at line 45 of file Sun\+Detect.\+c.
+
+\mbox{\Hypertarget{_sun_detect_8c_af1d63455e5a91999225f25fd0cebc18e}\label{_sun_detect_8c_af1d63455e5a91999225f25fd0cebc18e}} 
+\index{SunDetect.c@{SunDetect.c}!readLight@{readLight}}
+\index{readLight@{readLight}!SunDetect.c@{SunDetect.c}}
+\subsubsection{\texorpdfstring{readLight()}{readLight()}}
+{\footnotesize\ttfamily int read\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the Read\+A\+DC library with the current A\+DC pin as parameter. 
+
+
+
+Definition at line 37 of file Sun\+Detect.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{_sun_detect_8c_af1d63455e5a91999225f25fd0cebc18e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_sun_detect_8c_a0cfa8bf08501f1c19d2357856d4236ae}\label{_sun_detect_8c_a0cfa8bf08501f1c19d2357856d4236ae}} 
+\index{SunDetect.c@{SunDetect.c}!SD\_init@{SD\_init}}
+\index{SD\_init@{SD\_init}!SunDetect.c@{SunDetect.c}}
+\subsubsection{\texorpdfstring{SD\_init()}{SD\_init()}}
+{\footnotesize\ttfamily void S\+D\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Setup for A\+DC reading and datadirection for the L\+ED port. 
+
+
+
+Definition at line 24 of file Sun\+Detect.\+c.
+
