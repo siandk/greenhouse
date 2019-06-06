@@ -48,7 +48,7 @@ void GreenhouseInit()
 	sei();
 	
 	// Relay port config
-	DDRE |= (1<<PE1);
+	DDRJ |= (1<<PJ1);
 	
 	// Enable watchdog timer (4 second timeout)
 	wdt_enable(WDTO_4S);

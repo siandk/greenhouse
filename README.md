@@ -179,9 +179,9 @@ It takes 4096 steps for a full revolution of the stepmotor. This means that for 
 |--------|-------------|----------|------|------|
 |A       |LED toggle   |0         |Out   |      |
 |B       |Stepmotor    |0-3       |Out   |      |
-|E       |Relay        |1         |Out   |      |
 |E       |WO Servo(PWM)|4         |Out   |      |
 |E       |WS Servo(PWM)|5         |Out   |      |
+|J       |Relay        |1         |Out   |      |
 |K       |Keyboard Col |0-3       |Out   |      |
 |K       |Keyboard Row |4-7       |In    |      |
 ### TIMERS

@@ -17,7 +17,7 @@
 #include "MoistureDetect.h"
 #include "lcd.h"
 
-void runCommand(key);
+void runCommand(char key);
 void printStatus(float temp, int lightLevel, int moistureLevel);
 void manualControl(char command);
 
@@ -50,7 +50,8 @@ The watchdog timer is also reset here.
 */
 ISR(TIMER1_COMPA_vect)
 {
-	PORTE |= (1<<PE1);
+	PORTJ |= (1<<PJ1); // Turn on relay
+	_delay_ms(15); // Small delay to ensure there is power for a sensor read
 	if (mode == 'a')
 	{
 		openWindow(readTempCelsius());
@@ -58,7 +59,7 @@ ISR(TIMER1_COMPA_vect)
 		WS_flag = moistureOK(readMoisture());
 	}
 	printStatus(readTempCelsius(), readLight(), readMoisture());
-	PORTE &= ~(1<<PE1);
+	PORTJ &= ~(1<<PJ1); // Turn off relay
 	wdt_reset();
 }
 
